@@ -17,13 +17,16 @@
  */
 import ij.IJ;
 import ij.ImagePlus;
+import ij.io.FileInfo;
+import ij.io.FileSaver;
+import ij.io.OpenDialog;
 import ij.plugin.PlugIn;
 
 import org.imagearchive.lsm.reader.Reader;
 
-public class LSM_Reader implements PlugIn {
+public class LSM_Reader extends ImagePlus implements PlugIn {
 
-	public static final String VERSION = "4.0g";
+	public static final String VERSION = "4.0h";
 
 	public final String infoMessage = "LSM_Reader " + VERSION +
 		" Copyright (C) 2002-2009 P. Pirrotte, J. Mutterer, Y. Krempp\n\n" +
@@ -40,8 +43,22 @@ public class LSM_Reader implements PlugIn {
 			showAbout();
 			return;
 		}
-		if (IJ.versionLessThan("1.39u")) return;
-		new Reader().open(arg, true);
+		if (IJ.versionLessThan("1.46")) return;
+		final OpenDialog od = new OpenDialog("Open LSM...", arg);
+		final String directory = od.getDirectory();
+		final String name = od.getFileName();
+		if (name == null) return;
+		IJ.showStatus("Opening: " + directory + name);
+		final ImagePlus imp = new Reader().open(directory + name);
+		if (imp == null) return;
+		setStack(imp.getTitle(), imp.getStack());
+		final FileInfo fi = imp.getOriginalFileInfo();
+		if (imp.isComposite()) new FileSaver(imp).saveDisplayRangesAndLuts(imp, fi);
+		setFileInfo(fi);
+		setCalibration(imp.getCalibration());
+		setDimensions(imp.getNChannels(), imp.getNSlices(), imp.getNFrames());
+		if (imp.getNChannels() * imp.getNFrames() != 1) setOpenAsHyperStack(true);
+		if (arg.equals("")) show();
 	}
 
 	public void showAbout() {
@@ -57,4 +74,5 @@ public class LSM_Reader implements PlugIn {
 	{
 		return new Reader().open(directory, filename, verbose, thumb);
 	}
+
 }
