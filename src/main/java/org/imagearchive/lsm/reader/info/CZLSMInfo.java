@@ -1,3 +1,4 @@
+
 package org.imagearchive.lsm.reader.info;
 
 public class CZLSMInfo {

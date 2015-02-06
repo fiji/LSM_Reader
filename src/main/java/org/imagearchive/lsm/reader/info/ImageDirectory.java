@@ -1,3 +1,4 @@
+
 package org.imagearchive.lsm.reader.info;
 
 public class ImageDirectory {
@@ -38,12 +39,12 @@ public class ImageDirectory {
 
 	public long OFFSET_NEXT_DIRECTORY = 0;
 
+	@Override
 	public String toString() {
-		return new String("TIF_NEWSUBFILETYPE:  " + TIF_NEWSUBFILETYPE + "\n"
-				+ "TIF_IMAGEWIDTH:  " + TIF_IMAGEWIDTH + "\n"
-				+ "TIF_IMAGELENGTH:  " + TIF_IMAGELENGTH + "\n"
-				+ "TIF_SAMPLESPERPIXEL:  " + TIF_SAMPLESPERPIXEL + "\n"
-				+ "TIF_COMPRESSION:  " + TIF_COMPRESSION + "\n"
-				+ "TIF_PREDICTOR:  " + TIF_PREDICTOR + "\n");
+		return new String("TIF_NEWSUBFILETYPE:  " + TIF_NEWSUBFILETYPE + "\n" +
+			"TIF_IMAGEWIDTH:  " + TIF_IMAGEWIDTH + "\n" + "TIF_IMAGELENGTH:  " +
+			TIF_IMAGELENGTH + "\n" + "TIF_SAMPLESPERPIXEL:  " + TIF_SAMPLESPERPIXEL +
+			"\n" + "TIF_COMPRESSION:  " + TIF_COMPRESSION + "\n" +
+			"TIF_PREDICTOR:  " + TIF_PREDICTOR + "\n");
 	}
 }
