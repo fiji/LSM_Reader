@@ -34,8 +34,14 @@ import org.imagearchive.lsm.reader.info.LSMFileInfo;
 public class Reader {
 
 	public static char micro = '\u00b5';
+	private boolean show = true;
 
 	public static String micrometer = micro + "m";
+
+	public ImagePlus open(final String path) {
+		show = false;
+		return open(path, true);
+	}
 
 	public ImagePlus open(final String arg, final boolean verbose) {
 		File file = null;
@@ -45,13 +51,12 @@ public class Reader {
 		if (name == null) return null;
 		file = new File(od.getDirectory(), name);
 		if (file != null) imp = open(file.getParent(), file.getName(), true, false);
-		if (!arg.equals("noshow") & imp != null) {
+		if (show && !arg.equals("noshow") & imp != null) {
 			imp.setPosition(1, 1, 1);
 			imp.show();
 			imp.updateAndDraw();
 			WindowFocusListener listener = null;
-			final ImageWindow window = imp.getWindow();
-			if (window != null) try {
+			try {
 				final Class toolbox =
 					Class.forName("org.imagearchive.lsm.toolbox.gui.ImageFocusListener");
 				Object o = null;
@@ -62,7 +67,8 @@ public class Reader {
 					o.getClass().getMethod("windowGainedFocus",
 						new Class[] { WindowEvent.class });
 				if (listener != null) {
-					window.addWindowFocusListener(listener);
+					final ImageWindow win = imp.getWindow();
+					if (win != null) win.addWindowFocusListener(listener);
 				}
 				if (toolboxMet != null) toolboxMet.invoke(o, new Object[] { null });
 			}
