@@ -26,7 +26,13 @@ import org.imagearchive.lsm.reader.Reader;
 
 public class LSM_Reader extends ImagePlus implements PlugIn {
 
-	public static final String VERSION = "4.0h";
+	public static final String VERSION = version();
+
+	private static String version() {
+		final String version =
+			LSM_Reader.class.getPackage().getImplementationVersion();
+		return version == null ? "DEV" : version;
+	}
 
 	public final String infoMessage = "LSM_Reader " + VERSION +
 		" Copyright (C) 2002-2009 P. Pirrotte, J. Mutterer, Y. Krempp\n\n" +
