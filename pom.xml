@@ -9,7 +9,7 @@
 	</parent>
 
 	<artifactId>LSM_Reader</artifactId>
-	<version>4.0i-SNAPSHOT</version>
+	<version>4.1.0</version>
 
 	<name>plugins/LSM_Reader.jar</name>
 	<description />
@@ -46,4 +46,8 @@
 			<artifactId>ij</artifactId>
 		</dependency>
 	</dependencies>
+
+  <scm>
+    <tag>LSM_Reader-4.1.0</tag>
+  </scm>
 </project>
