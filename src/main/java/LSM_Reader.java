@@ -29,8 +29,12 @@ public class LSM_Reader extends ImagePlus implements PlugIn {
 	public static final String VERSION = version();
 
 	private static String version() {
-		final String version =
-			LSM_Reader.class.getPackage().getImplementationVersion();
+		String version = null;
+		final Package lsmPackage = LSM_Reader.class.getPackage();
+		if (lsmPackage != null) {
+			version =
+			lsmPackage.getImplementationVersion();
+		}
 		return version == null ? "DEV" : version;
 	}
 
