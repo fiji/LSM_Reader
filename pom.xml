@@ -32,6 +32,21 @@
 		</developer>
 	</developers>
 
+	<scm>
+		<connection>scm:git:git://github.com/fiji/LSM_Reader</connection>
+		<developerConnection>scm:git:git@github.com:fiji/LSM_Reader</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/fiji/LSM_Reader</url>
+	</scm>
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/fiji/LSM_Reader/issues</url>
+	</issueManagement>
+	<ciManagement>
+		<system>Jenkins</system>
+		<url>http://jenkins.imagej.net/job/LSM_Reader/</url>
+	</ciManagement>
+
 	<repositories>
 		<!-- NB: for project parent -->
 		<repository>
