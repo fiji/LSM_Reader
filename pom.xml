@@ -18,20 +18,44 @@
 
 	<developers>
 		<developer>
-			<name>Patrick Pirrotte</name>
-			<email>ppirrotte@tgen.org</email>
+			<id>ctrueden</id>
+			<name>Curtis Rueden</name>
+			<url>http://imagej.net/User:Rueden</url>
 			<roles>
-				<role>author</role>
-			</roles>
-		</developer>
-		<developer>
-			<name>Jerome Mutterer</name>
-			<email>jerome.mutterer@ibmp-ulp.u-strasbg.fr</email>
-			<roles>
-				<role>author</role>
+				<role>maintainer</role>
 			</roles>
 		</developer>
 	</developers>
+	<contributors>
+		<contributor>
+			<name>Patrick Pirrotte</name>
+			<roles><role>founder</role></roles>
+		</contributor>
+		<contributor>
+			<name>Jerome Mutterer</name>
+			<url>http://imagej.net/User:Mutterer</url>
+			<roles><role>founder</role></roles>
+			<properties><id>mutterer</id></properties>
+		</contributor>
+		<contributor>
+			<name>Yannick Krempp</name>
+		</contributor>
+		<contributor>
+			<name>Johannes Schindelin</name>
+			<url>http://imagej.net/User:Schindelin</url>
+			<properties><id>dscho</id></properties>
+		</contributor>
+		<contributor>
+			<name>Mark Hiner</name>
+			<url>http://imagej.net/User:Hinerm</url>
+			<properties><id>hinerm</id></properties>
+		</contributor>
+		<contributor>
+			<name>Mark Longair</name>
+			<url>http://imagej.net/User:Mark</url>
+			<properties><id>mhl</id></properties>
+		</contributor>
+	</contributors>
 
 	<scm>
 		<connection>scm:git:git://github.com/fiji/LSM_Reader</connection>
