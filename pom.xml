@@ -13,7 +13,8 @@
 
 	<name>plugins/LSM_Reader.jar</name>
 	<description />
-	<url>http://fiji.sc/LSM_Toolbox</url>
+	<url>http://imagej.net/LSM_Toolbox</url>
+	<inceptionYear>2002</inceptionYear>
 
 	<developers>
 		<developer>
