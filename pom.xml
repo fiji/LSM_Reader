@@ -10,7 +10,7 @@
 
 	<groupId>sc.fiji</groupId>
 	<artifactId>LSM_Reader</artifactId>
-	<version>4.1.2-SNAPSHOT</version>
+	<version>4.1.2</version>
 
 	<name>LSM Reader</name>
 	<description>LSM Reader plugin for Fiji.</description>
@@ -79,7 +79,7 @@
 	<scm>
 		<connection>scm:git:git://github.com/fiji/LSM_Reader</connection>
 		<developerConnection>scm:git:git@github.com:fiji/LSM_Reader</developerConnection>
-		<tag>HEAD</tag>
+		<tag>LSM_Reader-4.1.2</tag>
 		<url>https://github.com/fiji/LSM_Reader</url>
 	</scm>
 	<issueManagement>
