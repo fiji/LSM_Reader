@@ -77,7 +77,7 @@
 	</mailingLists>
 
 	<scm>
-		<connection>scm:git:git://github.com/fiji/LSM_Reader</connection>
+		<connection>scm:git:https://github.com/fiji/LSM_Reader</connection>
 		<developerConnection>scm:git:git@github.com:fiji/LSM_Reader</developerConnection>
 		<tag>HEAD</tag>
 		<url>https://github.com/fiji/LSM_Reader</url>
